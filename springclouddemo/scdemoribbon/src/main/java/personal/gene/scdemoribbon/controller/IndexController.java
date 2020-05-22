@@ -19,8 +19,8 @@ public class IndexController {
 	@GetMapping()
 	@ResponseBody
 	@HystrixCommand(fallbackMethod="ribbonFallBack")
-	public Object index() {
-		return restTemplate.postForObject("http://scdemo1/index", null, Object.class);
+	public String index() {
+		return restTemplate.getForObject("http://scdemo1/index", String.class);
 	}
 	
 	public Object ribbonFallBack() {

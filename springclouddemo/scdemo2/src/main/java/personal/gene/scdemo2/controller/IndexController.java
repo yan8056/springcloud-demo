@@ -11,7 +11,7 @@ public class IndexController {
 
 	@GetMapping()
 	@ResponseBody
-	public Object index() {
+	public String index() {
 		return "Welcome demo2!";
 	}
 }
